@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99. SystemFiles">
+      <UniqueIdentifier>{3e8453d5-fd7d-47f9-a047-ec7d09810677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. System">
+      <UniqueIdentifier>{2a0eb5e8-2a8c-435d-b9a9-e05481b876a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Headers">
+      <UniqueIdentifier>{e1105f37-cf18-4b70-b285-77b64d9e7255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Default">
+      <UniqueIdentifier>{cb4331d4-3e90-4c5e-8659-4f4ed4012422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject">
+      <UniqueIdentifier>{25a6221c-1b26-4b75-92c9-7180e1b4482a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\Inspector">
+      <UniqueIdentifier>{fea8be66-bc4c-4240-a4ea-187b7d5e7feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\EditorView">
+      <UniqueIdentifier>{bc786b98-8079-4617-9de9-003941d4c51f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\MenuBar">
+      <UniqueIdentifier>{13c3f82c-e2ff-4242-8230-a81a32584fa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99. SystemFiles\Batch">
+      <UniqueIdentifier>{403f5c6c-fe1b-452c-8631-7fe621c3fbd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99. SystemFiles\vcpkg">
+      <UniqueIdentifier>{e04e437b-f073-4e3b-aa81-de0fd0a2744b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\LogConsole">
+      <UniqueIdentifier>{c980370b-bdbe-473e-a971-be0699b816b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. System\Manager">
+      <UniqueIdentifier>{58448432-806e-434f-98f0-59b3b783555d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\EditorCamera">
+      <UniqueIdentifier>{4d9fcea3-cfe6-4638-8d15-05e3c7669079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\Hierarchy">
+      <UniqueIdentifier>{6f0edfde-6a1f-40b5-9938-d128cfd8f0bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\ModelViewer">
+      <UniqueIdentifier>{3200f14f-a83d-41b5-9843-95e29ebb7c5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\AssetBrowser">
+      <UniqueIdentifier>{7d5e7feb-fea8-4240-a4ea-bc786b988079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\Inspector\InspectorObject">
+      <UniqueIdentifier>{ecb36892-4de6-4d99-baad-03bc79b2c23d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. EditorObject\NavHelper">
+      <UniqueIdentifier>{c3efd76b-9f24-4593-af6e-c47ed8b01265}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\public\EditorApp.h">
+      <Filter>00. System</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>97. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>97. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>97. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>97. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Editor_Define.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Inspector.h">
+      <Filter>01. EditorObject\Inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\EditorObject.h">
+      <Filter>01. EditorObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\EditorView.h">
+      <Filter>01. EditorObject\EditorView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\MenuBar.h">
+      <Filter>01. EditorObject\MenuBar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\LogConsole.h">
+      <Filter>01. EditorObject\LogConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\EditorManager.h">
+      <Filter>00. System\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\PathManager.h">
+      <Filter>00. System\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\EditorCamera.h">
+      <Filter>01. EditorObject\EditorCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Hierarchy.h">
+      <Filter>01. EditorObject\Hierarchy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\ModelViewer.h">
+      <Filter>01. EditorObject\ModelViewer</Filter>
+    </ClInclude>
+	<ClInclude Include="..\public\AnimationPresetEditor.h">
+	  <Filter>01. EditorObject\ModelViewer</Filter>
+	</ClInclude>
+    <ClInclude Include="..\public\AssetBrowser.h">
+      <Filter>01. EditorObject\AssetBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\InspectorTransform.h">
+      <Filter>01. EditorObject\Inspector\InspectorObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\NavHelper.h">
+      <Filter>01. EditorObject\NavHelper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\private\EditorApp.cpp">
+      <Filter>00. System</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>97. Default</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>98. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Inspector.cpp">
+      <Filter>01. EditorObject\Inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\EditorView.cpp">
+      <Filter>01. EditorObject\EditorView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\EditorViewUI.cpp">
+      <Filter>01. EditorObject\EditorView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\MenuBar.cpp">
+      <Filter>01. EditorObject\MenuBar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\LogConsole.cpp">
+      <Filter>01. EditorObject\LogConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\EditorManager.cpp">
+      <Filter>00. System\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\EditorCamera.cpp">
+      <Filter>01. EditorObject\EditorCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Hierarchy.cpp">
+      <Filter>01. EditorObject\Hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\ModelViewer.cpp">
+      <Filter>01. EditorObject\ModelViewer</Filter>
+    </ClCompile>
+	<ClCompile Include="..\private\AnimationPresetEditor.cpp">
+	  <Filter>01. EditorObject\ModelViewer</Filter>
+	</ClCompile>
+    <ClCompile Include="..\private\AssetBrowser.cpp">
+      <Filter>01. EditorObject\AssetBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\InspectorTransform.cpp">
+      <Filter>01. EditorObject\Inspector\InspectorObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\NavHelper.cpp">
+      <Filter>01. EditorObject\NavHelper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Editor.ico">
+      <Filter>97. Default</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>97. Default</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\vcpkg.json">
+      <Filter>99. SystemFiles\vcpkg</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Editor.rc">
+      <Filter>97. Default</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

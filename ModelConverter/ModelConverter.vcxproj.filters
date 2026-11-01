@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00. ToolFile">
+      <UniqueIdentifier>{e0e6a150-c7ad-410b-a75f-bca0d850907c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Converter.cpp">
+      <Filter>00. ToolFile</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>00. ToolFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelConverter.cpp">
+      <Filter>00. ToolFile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Converter.h">
+      <Filter>00. ToolFile</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>00. ToolFile</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

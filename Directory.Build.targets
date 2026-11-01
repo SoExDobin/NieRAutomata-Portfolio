@@ -1,0 +1,42 @@
+<Project>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VcpkgInstalledDir)$(VcpkgTriplet)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Development'">$(VcpkgInstalledDir)$(VcpkgTriplet)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)'=='Release'">$(VcpkgInstalledDir)$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Development'">$(VcpkgInstalledDir)$(VcpkgTriplet)\debug\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)'=='Release'">$(VcpkgInstalledDir)$(VcpkgTriplet)\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- Development: Debug and the same _DEBUG features (stats, captures, gates, D3D debug layer), debug CRT and
+       vcpkg debug libraries, with the optimizer on for play testing. Debug stays unoptimized for stepping. -->
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Development' and '$(Platform)'=='x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- Copies only the vcpkg DLLs the built binary imports, followed through its dependencies (CopyVcpkgRuntimeDlls.ps1),
+       instead of every DLL in vcpkg bin: assimp (ModelConverter only), python, sqlite, openssl, PhysX GPU etc. stay out of
+       the game and Editor folders and the release package. -->
+  <Target Name="CopyVcpkgRuntimeBinaries" AfterTargets="Build"
+          Condition="'$(Platform)'=='x64' and '$(OutDir)' != '' and ('$(ConfigurationType)'=='Application' or '$(ConfigurationType)'=='DynamicLibrary')">
+    <PropertyGroup>
+      <VcpkgRuntimeBinDir Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Development'">$(VcpkgInstalledDir)$(VcpkgTriplet)\debug\bin</VcpkgRuntimeBinDir>
+      <VcpkgRuntimeBinDir Condition="'$(Configuration)'=='Release'">$(VcpkgInstalledDir)$(VcpkgTriplet)\bin</VcpkgRuntimeBinDir>
+      <VcpkgRuntimeOutDir>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(OutDir)').TrimEnd('\'))</VcpkgRuntimeOutDir>
+    </PropertyGroup>
+    <Exec Condition="'$(VcpkgRuntimeBinDir)' != ''"
+          Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)CopyVcpkgRuntimeDlls.ps1&quot; -Binary &quot;$(TargetPath)&quot; -OutDir &quot;$(VcpkgRuntimeOutDir)&quot; -VcpkgBin &quot;$(VcpkgRuntimeBinDir)&quot; -Dumpbin &quot;$(VCToolsInstallDir)bin\Hostx64\x64\dumpbin.exe&quot;" />
+  </Target>
+</Project>
