@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Development|x64">
+      <Configuration>Development</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3af500f2-f316-41c0-9301-0d4f2be4ffb7}</ProjectGuid>
+    <RootNamespace>Client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'">
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+    <LocalDebuggerCommand>$(SolutionDir)Launcher\bin\$(Configuration)\Launcher.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(SolutionDir)Launcher\bin\$(Configuration)\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CLIENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CLIENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;CLIENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(Projectdir);..\public\;..\..\EngineSDK\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\EngineSDK\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+      <ShaderType>Effect</ShaderType>
+      <ObjectFileOutput>$(OutDir)shaders\%(Filename).cso</ObjectFileOutput>
+      <EntryPointName>main</EntryPointName>
+      <AdditionalIncludeDirectories>..\..\EngineSDK\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </FxCompile>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>call "$(ProjectDir)PostBuildCopy.bat" "$(SolutionDir)" "$(Configuration)" "$(TargetPath)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;CLIENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(Projectdir);..\public\;..\..\EngineSDK\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\EngineSDK\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+      <ShaderType>Effect</ShaderType>
+      <ObjectFileOutput>$(OutDir)shaders\%(Filename).cso</ObjectFileOutput>
+      <EntryPointName>main</EntryPointName>
+      <AdditionalIncludeDirectories>..\..\EngineSDK\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </FxCompile>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>call "$(ProjectDir)PostBuildCopy.bat" "$(SolutionDir)" "$(Configuration)" "$(TargetPath)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\public\UIManager.h" />
+    <ClInclude Include="..\public\CommunicationUI.h" />
+    <ClInclude Include="..\public\Bullet.h" />
+    <ClInclude Include="..\public\WorldMap.h" />
+    <ClInclude Include="..\public\AreaTrigger.h" />
+    <ClInclude Include="..\public\DirectionalLight.h" />
+    <ClInclude Include="..\public\PointLight.h" />
+    <ClInclude Include="..\public\Firework.h" />
+    <ClInclude Include="..\public\MonsterSpawner.h" />
+    <ClInclude Include="..\public\ClientSettingManager.h" />
+    <ClInclude Include="..\public\Client_Define.h" />
+    <ClInclude Include="..\public\Client_Function.h" />
+    <ClInclude Include="..\public\Em0000.h" />
+    <ClInclude Include="..\public\Em0000Body.h" />
+    <ClInclude Include="..\public\Emb001.h" />
+    <ClInclude Include="..\public\Emb001Body.h" />
+    <ClInclude Include="..\public\StateEm0000.h" />
+    <ClInclude Include="..\public\StateEm0000_Attack.h" />
+    <ClInclude Include="..\public\StateEm0000_Await.h" />
+    <ClInclude Include="..\public\StateEm0000_Chase.h" />
+    <ClInclude Include="..\public\StateEm0000_Dead.h" />
+    <ClInclude Include="..\public\StateEm0000_Hit.h" />
+    <ClInclude Include="..\public\StateEm0000_Idle.h" />
+    <ClInclude Include="..\public\Em8000.h" />
+    <ClInclude Include="..\public\Em8000Body.h" />
+    <ClInclude Include="..\public\StateEm8000.h" />
+    <ClInclude Include="..\public\StateEm8000_Attack.h" />
+    <ClInclude Include="..\public\StateEm8000_Dead.h" />
+    <ClInclude Include="..\public\StateEm8000_Groggy.h" />
+    <ClInclude Include="..\public\StateEm8000_Idle.h" />
+    <ClInclude Include="..\public\StateEm8000_Laser.h" />
+    <ClInclude Include="..\public\StateEm8000_Intro.h" />
+    <ClInclude Include="..\public\StateEm8000_TailStab.h" />
+    <ClInclude Include="..\public\StateEm8000_Ball.h" />
+    <ClInclude Include="..\public\StateEm8000_Gun.h" />
+    <ClInclude Include="..\public\StateEm8000_Move.h" />
+    <ClInclude Include="..\public\Em0010.h" />
+    <ClInclude Include="..\public\Em0010Body.h" />
+    <ClInclude Include="..\public\Em0010Movement.h" />
+    <ClInclude Include="..\public\Em3000.h" />
+    <ClInclude Include="..\public\Em3000Body.h" />
+    <ClInclude Include="..\public\EmMovement.h" />
+    <ClInclude Include="..\public\BoneShatter.h" />
+    <ClInclude Include="..\public\Em3000Parts.h" />
+    <ClInclude Include="..\public\Em3001.h" />
+    <ClInclude Include="..\public\Em3002.h" />
+    <ClInclude Include="..\public\Em3003.h" />
+    <ClInclude Include="..\public\FireFlashEffect.h" />
+    <ClInclude Include="..\public\ExplodeEffect.h" />
+    <ClInclude Include="..\public\ConfettiEffect.h" />
+    <ClInclude Include="..\public\MonsterAOE.h" />
+    <ClInclude Include="..\public\MonsterHitBox.h" />
+    <ClInclude Include="..\public\MonsterSight.h" />
+    <ClInclude Include="..\public\Em3004.h" />
+    <ClInclude Include="..\public\Em3004Body.h" />
+    <ClInclude Include="..\public\StateEm3004.h" />
+    <ClInclude Include="..\public\StateEm3004_Fall.h" />
+    <ClInclude Include="..\public\StateEm3004_Attack.h" />
+    <ClInclude Include="..\public\StateEm3004_Hit.h" />
+    <ClInclude Include="..\public\StateEm3004_Dead.h" />
+    <ClInclude Include="..\public\Entity.h" />
+    <ClInclude Include="..\public\FreeCamera.h" />
+    <ClInclude Include="..\public\HpBarWorldUI.h" />
+    <ClInclude Include="..\public\Pl0000HpBar.h" />
+    <ClInclude Include="..\public\LevelGamePlay.h" />
+    <ClInclude Include="..\public\LevelLoading.h" />
+    <ClInclude Include="..\public\LevelTitle.h" />
+    <ClInclude Include="..\public\Loader.h" />
+    <ClInclude Include="..\public\LoadingBackground.h" />
+    <ClInclude Include="..\public\LoadingFadeIn.h" />
+    <ClInclude Include="..\public\LoadingFadeOut.h" />
+    <ClInclude Include="..\public\LoadingLogo.h" />
+    <ClInclude Include="..\public\ClientApp.h" />
+    <ClInclude Include="..\public\LoadingPixelPanel.h" />
+    <ClInclude Include="..\public\Monster.h" />
+    <ClInclude Include="..\public\MonsterStateMachine.h" />
+    <ClInclude Include="..\public\Movement.h" />
+    <ClInclude Include="..\public\NavigationManager.h" />
+    <ClInclude Include="..\public\ParticleEffect.h" />
+    <ClInclude Include="..\public\Pl0000.h" />
+    <ClInclude Include="..\public\Pl0000Body.h" />
+    <ClInclude Include="..\public\Pl0000EvadeChecker.h" />
+    <ClInclude Include="..\public\Pl0000EvadeGhost.h" />
+    <ClInclude Include="..\public\Pl0000Input.h" />
+    <ClInclude Include="..\public\Pl0000MonsterChecker.h" />
+    <ClInclude Include="..\public\Pl0000Parts.h" />
+    <ClInclude Include="..\public\Pl0000Shockwave.h" />
+    <ClInclude Include="..\public\Pl0000StateMachine.h" />
+    <ClInclude Include="..\public\Pl0000Movement.h" />
+    <ClInclude Include="..\public\Projectile.h" />
+    <ClInclude Include="..\public\SheathWP0070Body.h" />
+    <ClInclude Include="..\public\SheathWP0220Body.h" />
+    <ClInclude Include="..\public\SkyBox.h" />
+    <ClInclude Include="..\public\SkySphere.h" />
+    <ClInclude Include="..\public\SparkEffect.h" />
+    <ClInclude Include="..\public\WeaponHalo.h" />
+    <ClInclude Include="..\public\SwordWave.h" />
+    <ClInclude Include="..\public\LaserEffect.h" />
+    <ClInclude Include="..\public\PodLaser.h" />
+    <ClInclude Include="..\public\State.h" />
+    <ClInclude Include="..\public\State2B.h" />
+    <ClInclude Include="..\public\State2B_AttackAir.h" />
+    <ClInclude Include="..\public\State2B_AttackGround.h" />
+    <ClInclude Include="..\public\StateA2_AttackAir.h" />
+    <ClInclude Include="..\public\StateA2_AttackGround.h" />
+    <ClInclude Include="..\public\State2B_Evade.h" />
+    <ClInclude Include="..\public\State2B_Hit.h" />
+    <ClInclude Include="..\public\State2B_Idle.h" />
+    <ClInclude Include="..\public\State2B_Jump.h" />
+    <ClInclude Include="..\public\State2B_PodAttack.h" />
+    <ClInclude Include="..\public\State2B_PodGlide.h" />
+    <ClInclude Include="..\public\State2B_Ledge.h" />
+    <ClInclude Include="..\public\State2B_Run.h" />
+    <ClInclude Include="..\public\State2B_Sprint.h" />
+    <ClInclude Include="..\public\State2B_Walk.h" />
+    <ClInclude Include="..\public\StateEm0010.h" />
+    <ClInclude Include="..\public\StateEm0010_Attack.h" />
+    <ClInclude Include="..\public\StateEm0010_Await.h" />
+    <ClInclude Include="..\public\StateEm0010_Chase.h" />
+    <ClInclude Include="..\public\StateEm0010_Dead.h" />
+    <ClInclude Include="..\public\StateEm0010_Hit.h" />
+    <ClInclude Include="..\public\StateEm0010_Idle.h" />
+    <ClInclude Include="..\public\EmLaser.h" />
+    <ClInclude Include="..\public\Em3000Homing.h" />
+    <ClInclude Include="..\public\EmRing.h" />
+    <ClInclude Include="..\public\BossAlert.h" />
+    <ClInclude Include="..\public\DamageText.h" />
+    <ClInclude Include="..\public\CameraEventSystem.h" />
+    <ClInclude Include="..\public\EmCutscene.h" />
+    <ClInclude Include="..\public\EmTelegraph.h" />
+    <ClInclude Include="..\public\StateEm3000.h" />
+    <ClInclude Include="..\public\StateEm3000_Intro.h" />
+    <ClInclude Include="..\public\StateEm3000_Idle.h" />
+    <ClInclude Include="..\public\StateEm3000_Melee.h" />
+    <ClInclude Include="..\public\StateEm3000_Range.h" />
+    <ClInclude Include="..\public\StateEm3000_Groggy.h" />
+    <ClInclude Include="..\public\StateEm3000_Transform.h" />
+    <ClInclude Include="..\public\StateEm3000_Chase.h" />
+    <ClInclude Include="..\public\StateEm3000_Stomp.h" />
+    <ClInclude Include="..\public\StateEm3000_Phase2Groggy.h" />
+    <ClInclude Include="..\public\StateEm3000_Puppet.h" />
+    <ClInclude Include="..\public\StateEm3000_Dead.h" />
+    <ClInclude Include="..\public\StateEm0010_Walk.h" />
+    <ClInclude Include="..\public\StateMachine.h" />
+    <ClInclude Include="..\public\StateMonster.h" />
+    <ClInclude Include="..\public\StaticCamera.h" />
+    <ClInclude Include="..\public\Terrain.h" />
+    <ClInclude Include="..\public\ThirdPersonCamera.h" />
+    <ClInclude Include="..\public\TitleBackground.h" />
+    <ClInclude Include="..\public\WP0070Body.h" />
+    <ClInclude Include="..\public\WP0220Body.h" />
+    <ClInclude Include="..\public\WP3000Body.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\private\UIManager.cpp" />
+    <ClCompile Include="..\private\CommunicationUI.cpp" />
+    <ClCompile Include="..\private\reflection\CommunicationUI_Reflection.cpp" />
+    <ClCompile Include="..\private\Bullet.cpp" />
+    <ClCompile Include="..\private\WorldMap.cpp" />
+    <ClCompile Include="..\private\AreaTrigger.cpp" />
+    <ClCompile Include="..\private\DirectionalLight.cpp" />
+    <ClCompile Include="..\private\PointLight.cpp" />
+    <ClCompile Include="..\private\Firework.cpp" />
+    <ClCompile Include="..\private\MonsterSpawner.cpp" />
+    <ClCompile Include="..\private\ClientSettingManager.cpp" />
+	<ClCompile Include="..\private\ClientTypeRegistration.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\AreaTrigger_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\BossAlert_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Bullet_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\DamageText_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\DirectionalLight_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em0000_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em0000Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em0010_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em0010Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em0010Movement_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3000_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3000Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3000Homing_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3000Parts_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3001_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3002_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3003_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3004_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em3004Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em8000_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Em8000Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Emb001_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Entity_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Monster_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Emb001Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\EmLaser_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\EmMovement_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\EmRing_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\EmTelegraph_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\ExplodeEffect_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\ConfettiEffect_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\FireFlashEffect_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Firework_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\MonsterSpawner_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\FreeCamera_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\HpBarWorldUI_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LaserEffect_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LoadingBackground_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LoadingFadeIn_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LoadingFadeOut_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LoadingLogo_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\LoadingPixelPanel_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\MonsterAOE_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\MonsterHitBox_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\MonsterSight_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\MonsterStateMachine_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000EvadeChecker_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000EvadeGhost_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000HpBar_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000Input_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000MonsterChecker_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000Movement_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000Shockwave_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Pl0000StateMachine_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\PodLaser_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\PointLight_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SheathWP0070Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SheathWP0220Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SkyBox_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SkySphere_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SparkEffect_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\StaticCamera_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\SwordWave_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\Terrain_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\ThirdPersonCamera_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\TitleBackground_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\WeaponHalo_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\WorldMap_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\WP0070Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\WP0220Body_Reflection.cpp" />
+    <ClCompile Include="..\private\reflection\WP3000Body_Reflection.cpp" />
+    <ClCompile Include="..\private\Em0000.cpp" />
+    <ClCompile Include="..\private\Em0000Body.cpp" />
+    <ClCompile Include="..\private\Emb001.cpp" />
+    <ClCompile Include="..\private\Emb001Body.cpp" />
+    <ClCompile Include="..\private\StateEm0000.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Attack.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Await.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Chase.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Dead.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Hit.cpp" />
+    <ClCompile Include="..\private\StateEm0000_Idle.cpp" />
+    <ClCompile Include="..\private\Em8000.cpp" />
+    <ClCompile Include="..\private\Em8000Body.cpp" />
+    <ClCompile Include="..\private\StateEm8000.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Attack.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Dead.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Groggy.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Idle.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Laser.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Intro.cpp" />
+    <ClCompile Include="..\private\StateEm8000_TailStab.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Ball.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Gun.cpp" />
+    <ClCompile Include="..\private\StateEm8000_Move.cpp" />
+    <ClCompile Include="..\private\Em0010.cpp" />
+    <ClCompile Include="..\private\Em0010Body.cpp" />
+    <ClCompile Include="..\private\Em0010Movement.cpp" />
+    <ClCompile Include="..\private\Em3000.cpp" />
+    <ClCompile Include="..\private\Em3000Body.cpp" />
+    <ClCompile Include="..\private\EmMovement.cpp" />
+    <ClCompile Include="..\private\BoneShatter.cpp" />
+    <ClCompile Include="..\private\Em3000Parts.cpp" />
+    <ClCompile Include="..\private\Em3001.cpp" />
+    <ClCompile Include="..\private\Em3002.cpp" />
+    <ClCompile Include="..\private\Em3003.cpp" />
+    <ClCompile Include="..\private\FireFlashEffect.cpp" />
+    <ClCompile Include="..\private\ExplodeEffect.cpp" />
+    <ClCompile Include="..\private\ConfettiEffect.cpp" />
+    <ClCompile Include="..\private\MonsterAOE.cpp" />
+    <ClCompile Include="..\private\MonsterHitBox.cpp" />
+    <ClCompile Include="..\private\MonsterSight.cpp" />
+    <ClCompile Include="..\private\Em3004.cpp" />
+    <ClCompile Include="..\private\Em3004Body.cpp" />
+    <ClCompile Include="..\private\StateEm3004.cpp" />
+    <ClCompile Include="..\private\StateEm3004_Fall.cpp" />
+    <ClCompile Include="..\private\StateEm3004_Attack.cpp" />
+    <ClCompile Include="..\private\StateEm3004_Hit.cpp" />
+    <ClCompile Include="..\private\StateEm3004_Dead.cpp" />
+    <ClCompile Include="..\private\Entity.cpp" />
+    <ClCompile Include="..\private\FreeCamera.cpp" />
+    <ClCompile Include="..\private\HpBarWorldUI.cpp" />
+    <ClCompile Include="..\private\Pl0000HpBar.cpp" />
+    <ClCompile Include="..\private\LevelGamePlay.cpp" />
+    <ClCompile Include="..\private\LevelLoading.cpp" />
+    <ClCompile Include="..\private\LevelTitle.cpp" />
+    <ClCompile Include="..\private\Loader.cpp" />
+    <ClCompile Include="..\private\LoadingBackground.cpp" />
+    <ClCompile Include="..\private\LoadingFadeIn.cpp" />
+    <ClCompile Include="..\private\LoadingFadeOut.cpp" />
+    <ClCompile Include="..\private\LoadingLogo.cpp" />
+    <ClCompile Include="..\private\ClientApp.cpp" />
+    <ClCompile Include="..\private\LoadingPixelPanel.cpp" />
+    <ClCompile Include="..\private\Monster.cpp" />
+    <ClCompile Include="..\private\MonsterStateMachine.cpp" />
+    <ClCompile Include="..\private\Movement.cpp" />
+    <ClCompile Include="..\private\NavigationManager.cpp" />
+    <ClCompile Include="..\private\ParticleEffect.cpp" />
+    <ClCompile Include="..\private\Pl0000.cpp" />
+    <ClCompile Include="..\private\Pl0000Body.cpp" />
+    <ClCompile Include="..\private\Pl0000EvadeChecker.cpp" />
+    <ClCompile Include="..\private\Pl0000EvadeGhost.cpp" />
+    <ClCompile Include="..\private\Pl0000Input.cpp" />
+    <ClCompile Include="..\private\Pl0000MonsterChecker.cpp" />
+    <ClCompile Include="..\private\Pl0000Parts.cpp" />
+    <ClCompile Include="..\private\Pl0000StateMachine.cpp" />
+    <ClCompile Include="..\private\Pl0000Movement.cpp" />
+    <ClCompile Include="..\private\Pl0000Shockwave.cpp" />
+    <ClCompile Include="..\private\Projectile.cpp" />
+    <ClCompile Include="..\private\SheathWP0070Body.cpp" />
+    <ClCompile Include="..\private\SheathWP0220Body.cpp" />
+    <ClCompile Include="..\private\SkyBox.cpp" />
+    <ClCompile Include="..\private\SkySphere.cpp" />
+    <ClCompile Include="..\private\SparkEffect.cpp" />
+    <ClCompile Include="..\private\WeaponHalo.cpp" />
+    <ClCompile Include="..\private\SwordWave.cpp" />
+    <ClCompile Include="..\private\LaserEffect.cpp" />
+    <ClCompile Include="..\private\PodLaser.cpp" />
+    <ClCompile Include="..\private\State.cpp" />
+    <ClCompile Include="..\private\State2B.cpp" />
+    <ClCompile Include="..\private\State2B_AttackAir.cpp" />
+    <ClCompile Include="..\private\State2B_AttackGround.cpp" />
+    <ClCompile Include="..\private\StateA2_AttackAir.cpp" />
+    <ClCompile Include="..\private\StateA2_AttackGround.cpp" />
+    <ClCompile Include="..\private\State2B_Evade.cpp" />
+    <ClCompile Include="..\private\State2B_Hit.cpp" />
+    <ClCompile Include="..\private\State2B_Idle.cpp" />
+    <ClCompile Include="..\private\State2B_Jump.cpp" />
+    <ClCompile Include="..\private\State2B_PodAttack.cpp" />
+    <ClCompile Include="..\private\State2B_PodGlide.cpp" />
+    <ClCompile Include="..\private\State2B_Ledge.cpp" />
+    <ClCompile Include="..\private\State2B_Run.cpp" />
+    <ClCompile Include="..\private\State2B_Sprint.cpp" />
+    <ClCompile Include="..\private\State2B_Walk.cpp" />
+    <ClCompile Include="..\private\StateEm0010.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Attack.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Await.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Chase.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Dead.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Hit.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Idle.cpp" />
+    <ClCompile Include="..\private\EmLaser.cpp" />
+    <ClCompile Include="..\private\Em3000Homing.cpp" />
+    <ClCompile Include="..\private\EmRing.cpp" />
+    <ClCompile Include="..\private\BossAlert.cpp" />
+    <ClCompile Include="..\private\DamageText.cpp" />
+    <ClCompile Include="..\private\CameraEventSystem.cpp" />
+    <ClCompile Include="..\private\EmCutscene.cpp" />
+    <ClCompile Include="..\private\EmTelegraph.cpp" />
+    <ClCompile Include="..\private\StateEm3000.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Intro.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Idle.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Melee.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Range.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Groggy.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Transform.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Chase.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Stomp.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Phase2Groggy.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Puppet.cpp" />
+    <ClCompile Include="..\private\StateEm3000_Dead.cpp" />
+    <ClCompile Include="..\private\StateEm0010_Walk.cpp" />
+    <ClCompile Include="..\private\StateMachine.cpp" />
+    <ClCompile Include="..\private\StateMonster.cpp" />
+    <ClCompile Include="..\private\StaticCamera.cpp" />
+    <ClCompile Include="..\private\Terrain.cpp" />
+    <ClCompile Include="..\private\ThirdPersonCamera.cpp" />
+    <ClCompile Include="..\private\TitleBackground.cpp" />
+    <ClCompile Include="..\private\WP0070Body.cpp" />
+    <ClCompile Include="..\private\WP0220Body.cpp" />
+    <ClCompile Include="..\private\WP3000Body.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <IncludeInUnityFile Condition="('$(Configuration)'=='Debug' or '$(Configuration)'=='Development') and '$(Platform)'=='x64'">false</IncludeInUnityFile>
+      <IncludeInUnityFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IncludeInUnityFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\bin\shaders\Shader_VtxAnimMesh.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxAnimMesh_Weapon.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMesh_Map.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMeshInstance_Map.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMeshInstance_Effect.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxCube.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMesh.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMesh_Effect.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxMesh_Halo.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxNormTex.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxParticlePoint.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxParticleRect.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxSphere.hlsl" />
+    <FxCompile Include="..\bin\shaders\Shader_VtxTex.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostBuildCopy.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

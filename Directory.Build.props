@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <VcpkgEnabled>true</VcpkgEnabled>
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+    <VcpkgInstalledDir>$(MSBuildThisFileDirectory)vcpkg_installed\</VcpkgInstalledDir>
+    <VcpkgTriplet>x64-windows</VcpkgTriplet>
+    <VcpkgHostTriplet>x64-windows</VcpkgHostTriplet>
+    <ForceImportBeforeCppProps>$(MSBuildThisFileDirectory)Directory.Build.user.props</ForceImportBeforeCppProps>
+  </PropertyGroup>
+</Project>
