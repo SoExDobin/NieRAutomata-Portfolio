@@ -10,12 +10,12 @@ C++20 · DirectX 11 자체 엔진으로 만든 NieR:Automata 모작 개인 프�
 
 | 항목 | 내용 |
 | --- | --- |
-| 개발 기간 | 1차 2026.01 ~ 04 · 리팩토링 2026.09 ~ 10 |
-| 제작 | 개인 · 학습 목적 모작 |
-| 개발 환경 | C++20 · DirectX 11 · HLSL |
-| 라이브러리 | PhysX · Jolt · RTTR · Recast · FMOD |
-| 담당 | Engine · Client · Editor · Launcher · ModelConverter |
-| 개발 도구 | GitHub 이슈 · PR · Actions 릴리즈 빌드 · Obsidian 작업 기록 |
+| 개발 기간 | 1차 2026.01 ~ 04, 리팩토링 2026.09 ~ 10 |
+| 제작 | 개인, 학습 목적 모작 |
+| 개발 환경 | C++20, DirectX 11, HLSL |
+| 라이브러리 | PhysX, Jolt, RTTR, Recast, FMOD |
+| 담당 | Engine, Client, Editor, Launcher, ModelConverter |
+| 개발 도구 | GitHub 이슈, PR, Actions 릴리즈 빌드, Obsidian 작업 기록 |
 
 ## 프로젝트 구성
 
